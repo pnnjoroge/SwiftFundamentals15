@@ -10,14 +10,14 @@ print("How to use playgrounds to make writing Swift fun and simple")
 /*:
  Now print your own phrases to the console. Pick one of your favorite songs. Use your knowledge of the `print` function to display the song title and artist.
  */
-
+print("Who Knows by Protege & Chronixx")
 
 /*:
  Use multiple `print` functions to write out some of the lyrics to the song.
  */
-
-
-
+print("Who Knows goes like: Sending all my love to my friends and foes,")
+print("I'm pleased to be chillin in the West Indies, Jah provide for my wants and needs")
+print("I got the sunshine, rivers and trees")
 /*:
 
  _Copyright © 2023 Apple Inc._
