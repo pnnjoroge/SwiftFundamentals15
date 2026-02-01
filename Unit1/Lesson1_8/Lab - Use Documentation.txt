@@ -1,0 +1,15 @@
+
+			UIVIEW OBJECT
+
+- What are three of the primary responsibilities of a UIView object?
+	1. To draw content and animate view properties to new values
+	2. To adjust the size and position of subviews
+	3. To respond to different types of events such as touch and gestures
+- What does documentation call a view that's embedded in another view?
+	Subview
+- What does documentation call the parent view that's embedding the other view?
+	Superview
+- What is a view's frame? 
+	The origin and dimensions of the view in the coordinate system of its superview
+- How is a view's bounds different from its frame?
+	Bounds defines the internal dimensions of the view as it sees them, making the frame an 	external property vs bounds an internal property
