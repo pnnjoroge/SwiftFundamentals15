@@ -53,6 +53,11 @@ class Fighter: Spaceship {
 
 class ShieldedShip: Fighter {
     var shieldStrength: Int = 0
+    
+    init(name:String, health: Int, position: Int, weapon:String, remainingFirePower: Int, shieldStrength: Int){
+        self.shieldStrength = shieldStrength
+        super.init(name: name, health: health, position: position, weapon: weapon, remainingFirePower:remainingFirePower)
+    }
 
     override func wasHit() {
         if shieldStrength > 0 {
@@ -61,6 +66,8 @@ class ShieldedShip: Fighter {
             super.wasHit()
         }
     }
+    
+    
 }
 /*:
  Note that each class above has an error by the class declaration that says "Class has no initializers." Unlike structs, classes do not come with memberwise initializers because the standard memberwise initializers don't always play nicely with inheritance. You can get rid of the error by providing default values for everything, but it is common, and better practice, to simply write your own initializer. Go to the declaration of `Spaceship` and add an initializer that takes in an argument for each property on `Spaceship` and sets the properties accordingly.
@@ -91,11 +98,21 @@ let destroyer = Fighter(
 
  Then create an instance of `ShieldedShip` below called `defender`. Use the memberwise initializer you just created. The ship's name should be "Defender."
  */
-
-
+let defender = ShieldedShip(
+    name: "Defender.",
+    health: 100,
+    position: 0,
+    weapon: "Gunther",
+    remainingFirePower: 10,
+    shieldStrength: 25
+)
 //:  Create a new constant named `sameShip` and set it equal to `falcon`. Print out the position of `sameShip` and `falcon`, then call `moveLeft()` on `sameShip` and print out the position of `sameShip` and `falcon` again. Did both positions change? Why? If both were structs instead of classes, would it be the same? Why or why not? Provide your answer in a comment or print statement below.
-
-
+let sameShip = falcon
+print(sameShip.position)
+sameShip.moveLeft()
+print(sameShip.position)
+print(falcon.position)
+//They changed because they both have the same value stored. Hence if one variable is updated, both will be updated. Values changed or updated in copied variables under structs would only be updated on the modified variable.
 /*:
  _Copyright © 2023 Apple Inc._
 
