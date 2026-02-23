@@ -4,9 +4,15 @@
  - Note: The exercises below are based on a game where a spaceship avoids obstacles in space. The ship is positioned at the bottom of a coordinate system and can only move left and right while obstacles "fall" from top to bottom. The base class `Spaceship` and subclasses `Fighter` and `ShieldedShip` have been provided for you below. You will use these to complete the exercises.
  */
 class Spaceship {
-    let name: String
-    var health: Int
-    var position: Int
+    var name: String = ""
+    var health: Int = 0
+    var position: Int = 0
+    
+    init(name: String, health: Int, position: Int) {
+        self.name = name
+        self.health = health
+        self.position = position
+    }
 
     func moveLeft() {
         position -= 1
@@ -25,8 +31,16 @@ class Spaceship {
 }
 
 class Fighter: Spaceship {
-    let weapon: String
-    var remainingFirePower: Int
+    var weapon: String = ""
+    var remainingFirePower: Int = 0
+    
+    init(name:String, health: Int, position: Int, weapon:String, remainingFirePower: Int){
+        self.weapon = weapon
+        self.remainingFirePower = remainingFirePower
+        
+        super.init(name: name, health: health, position: position)
+        
+    }
 
     func fire() {
         if remainingFirePower > 0 {
@@ -38,7 +52,7 @@ class Fighter: Spaceship {
 }
 
 class ShieldedShip: Fighter {
-    var shieldStrength: Int
+    var shieldStrength: Int = 0
 
     override func wasHit() {
         if shieldStrength > 0 {
@@ -53,6 +67,8 @@ class ShieldedShip: Fighter {
 
  Then create an instance of `Spaceship` below called `falcon`. Use the memberwise initializer you just created. The ship's name should be "Falcon."
  */
+let falcon = Spaceship(name: "Falcon", health: 0, position: 0)
+
 
 
 /*:
@@ -60,6 +76,14 @@ class ShieldedShip: Fighter {
 
  Then create an instance of `Fighter` below called `destroyer`. Use the memberwise initializer you just created. The ship's name should be "Destroyer."
  */
+let destroyer = Fighter(
+    name: "Destroyer.",
+    health: 100,
+    position: 0,
+    weapon: "Photon Torpedoes",
+    remainingFirePower: 10,
+
+)
 
 
 /*:
