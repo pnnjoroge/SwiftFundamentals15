@@ -1,10 +1,5 @@
 # Name: Paulette Njoroge
 
-## About Me
-* School Email: njorogep1444@durhamtech.edu
-* Dream Career: Full Stack Developer
-* Hidden Talent: Nothing special :(
-
 ## Course Information
 * Semester: Spring 2026
 * Course Name: CSC 118 - Swift Fundamentals I
